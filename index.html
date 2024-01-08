@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <h1><u>Calculator</u></h1>
+        <div class="calculater">
+            <input type="text">
+            <div class="btns">
+                <div class="wrapper">
+                    <button class="btn">7</button>
+                    <button class="btn">8</button>
+                    <button class="btn">9</button>
+                    <button class="btn">÷</button>
+                </div>
+                <div class="wrapper">
+                    <button class="btn">4</button>
+                    <button class="btn">5</button>
+                    <button class="btn">6</button>
+                    <button class="btn">×</button>
+                </div>
+                <div class="wrapper">
+                    <button class="btn">1</button>
+                    <button class="btn">2</button>
+                    <button class="btn">3</button>
+                    <button class="btn">-</button>
+                </div>
+                <div class="wrapper">
+                    <button class="btn">0</button>
+                    <button class="btn ac">AC</button>
+                    <button class="btn">+</button>
+                    <button class="btn equal">=</button>
+                </div>
+            </div>
+        </div>
+        <p>Project created with <a href="">M IBRAHIM,Maqbool,M Awais</a></p>
+    </section>
+    <script>
+        let x = document.querySelectorAll(".btn");
+        let input = document.querySelector("input");
+
+        x.forEach(e => {
+            e.addEventListener("click", function () {
+                let text = this.innerText;
+
+                if (text === "AC") {
+                    input.value = "";
+                } else if (text === '=') {
+                    calculation();
+                } else {
+                    input.value += text;
+                }
+
+            })
+        });
+
+        function calculation() {
+            let problem = input.value;
+            let i;
+
+            if (problem.includes('+')) {
+                i = problem.indexOf('+');
+                input.value = add(parseFloat(problem.substring(0, i)), parseFloat(problem.substring(i + 1)));
+            } else if (problem.includes('-')) {
+                i = problem.indexOf('-');
+                input.value = sub(parseFloat(problem.substring(0, i)), parseFloat(problem.substring(i + 1)));
+            } else if (problem.includes('×')) {
+                i = problem.indexOf('×');
+                input.value = mul(parseFloat(problem.substring(0, i)), parseFloat(problem.substring(i + 1)));
+            } else if (problem.includes('÷')) {
+                i = problem.indexOf('÷');
+                input.value = div(parseFloat(problem.substring(0, i)), parseFloat(problem.substring(i + 1)));
+            } else {
+                input.value = 'Wrong value! Please enter valid input';
+            }
+        }
+
+        function add(a, b) {
+            return a + b;
+        }
+
+        function sub(a, b) {
+            return a - b;
+        }
+
+        function mul(a, b) {
+            return a * b;
+        }
+
+        function div(a, b) {
+            if (b === 0) {
+                return 'MATH ERROR';
+            }
+            return a / b;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+
+section {
+    background:linear-gradient(45deg,#0a0a0a,#3a4452);
+    height: 100vh;
+}
+
+.calculater {
+    width: 28%;
+    margin: 2% auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent;
+    box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.5);
+    padding: 2%;
+    border-radius: 10px;
+}
+
+/* u {
+    font-family: serif;
+} */
+
+h1 {
+    text-align: center;
+    color: rgb(53, 208, 26);
+    padding-top: 5%;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+p {
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-size: 19px;
+}
+
+.ac {
+    font-size: 0.90rem;
+    font-weight: bold;
+}
+
+.equal {
+    background-color: orange;
+}
+
+button:active {
+    background-color:rgb(53, 208, 26);
+    color: white;
+}
+a{
+    color: rgb(53, 208, 26);
+}
+.wrapper {
+    display: flex;
+    gap: 10px;
+    margin: 5% 0;
+}
+
+h1.heading {
+    color: red;
+}
+
+input {
+    border-radius: 8px;
+    padding: 2px 8px;
+    width: 83%;
+    height: 60px;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background-color: transparent;
+    box-shadow: 0px 3px 15px rgba(84, 84, 84, 0.7);
+    color: white;
+    border: none;
+}
+
+
+@media screen and (max-width:992px) {
+    .btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    input {
+        height: 40px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .btn {
+        width: 27px;
+        height: 27px;
+    }
+
+    input {
+        width: 87%;
+        height: 35px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .ac {
+        font-size: 0.76rem;
+    }
+
+    p {
+        font-size: 0.80rem;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .btn {
+        width: 15px;
+        height: 15px;
+        font-size: 0.90rem;
+    }
+
+    input {
+        width: 87%;
+        height: 25px;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    .ac {
+        font-size: 0.4rem;
+    }
+
+    p {
+        font-size: 0.60rem;
+    }
+}
